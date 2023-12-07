@@ -7,6 +7,10 @@ import { logo, close, menu } from '../assets';
 const Navbar = () => {
 	const [active, setActive] = useState('');
 
+	const handleScroll = () => {
+		window.scrollTo(0, 0);
+	};
+
 	return (
 		<nav
 			className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
@@ -17,12 +21,14 @@ const Navbar = () => {
 					className='flex items-center gap-2'
 					onClick={() => {
 						setActive('');
-						window.scrollTo(0, 0);
+						// window.scrollTo(0, 0);
+						handleScroll();
 					}}
 				>
 					<img src={logo} alt='logo' className='w-9 h-9 object-contain' />
 					<p className='text-white text-[18px] font-bold cursor-pointer'>
-						Charlie B<span className='sm:block hidden'>| Super Web Dev</span>
+						Charlie B &nbsp;
+						<span className='sm:block hidden'>| Junior Web Dev</span>
 					</p>
 				</Link>
 			</div>
