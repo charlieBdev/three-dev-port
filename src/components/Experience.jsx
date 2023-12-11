@@ -31,7 +31,24 @@ const ExperienceCard = ({ exp }) => (
 	>
 		<div>
 			<h3 className='text-white text-[24px] font-bold'>{exp.title}</h3>
+			<p
+				className='text-secondary text-[16px] font-semibold'
+				style={{ margin: 0 }}
+			>
+				{exp.company_name}
+			</p>
 		</div>
+
+		<ul className='mt-5 list-disc ml-5 space-y-2'>
+			{exp.points.map((item, index) => (
+				<li
+					key={`experience-point-${index}`}
+					className='text-white-100 text-[14px] pl-1 tracking-wider'
+				>
+					{item}
+				</li>
+			))}
+		</ul>
 	</VerticalTimelineElement>
 );
 
@@ -43,7 +60,7 @@ const Experience = () => {
 				<h2 className={styles.heroHeadText}>Work Experience.</h2>
 			</motion.div>
 
-			<div className='mt-10 flex flex-col'>
+			<div className='mt-20 flex flex-col'>
 				<VerticalTimeline>
 					{experiences.map((exp, index) => (
 						<ExperienceCard key={index} exp={exp} />
