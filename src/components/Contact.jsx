@@ -7,9 +7,9 @@ import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
 
-// template_e9avqw4
-// service_94psvi6
-// vax2EtnNRhWQkWQJmN
+const serviceID = import.meta.env.VITE_SERVICEID;
+const templateID = import.meta.env.VITE_TEMPLATEID;
+const publicKey = import.meta.env.VITE_PUBLICKEY;
 
 const Contact = () => {
 	const formRef = useRef();
@@ -25,10 +25,49 @@ const Contact = () => {
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 
-		setForm({ ...form, [name]: value });
+		setForm({
+			...form,
+			[name]: value,
+		});
 	};
 
-	const handleSubmit = () => {};
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setLoading(true);
+
+		emailjs
+			.send(
+				serviceID,
+				// 'service_94psvi6',
+				templateID,
+				// 'template_3u1pkdq',
+				{
+					from_name: form.name,
+					to_name: 'Charlie',
+					from_email: form.email,
+					to_email: 'charliebdev@hotmail.com',
+					message: form.message,
+				},
+				publicKey
+				// 'ax2EtnNRhWQkWQJmN'
+			)
+			.then(
+				() => {
+					setLoading(false);
+					alert('Thanks. I will get back to you as soon as possible.');
+					setForm({
+						name: '',
+						email: '',
+						message: '',
+					});
+				},
+				(error) => {
+					setLoading(false);
+					console.log(error);
+					alert('Something went wrong.');
+				}
+			);
+	};
 
 	return (
 		<div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
