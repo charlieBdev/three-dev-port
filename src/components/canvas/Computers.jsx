@@ -4,7 +4,7 @@ import React, { Suspense, useEffect, useState } from 'react';
 import CanvasLoader from '../Loader';
 
 const Computers = ({ isMobile }) => {
-	const computer = useGLTF('./planet/scene.gltf');
+	const computer = useGLTF('./a_windy_day/scene.gltf');
 
 	return (
 		<mesh>

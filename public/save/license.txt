@@ -1,0 +1,11 @@
+Model Information:
+* title:	Final Fantasy VII Save Point
+* source:	https://sketchfab.com/3d-models/final-fantasy-vii-save-point-0ed5b386a0154a7cac7118ffd09649a1
+* author:	rtql8d (https://sketchfab.com/rtql8d)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Final Fantasy VII Save Point" (https://sketchfab.com/3d-models/final-fantasy-vii-save-point-0ed5b386a0154a7cac7118ffd09649a1) by rtql8d (https://sketchfab.com/rtql8d) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
